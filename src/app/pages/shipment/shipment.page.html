@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shipment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <table>
+  	<thead>
+  		<tr>
+  			<td>ID</td>
+  			<td>Shipment #</td>
+  			<td>Url</td>
+  		</tr>
+  	</thead>
+  	<tbody>
+		<tr *ngFor='let shipment of shipments | async index as i'>		  	
+		  <td>{{shipment.id}} </td>
+		  <td>{{shipment.slug }} </td>
+		  <td><a href="{{shipment._links.self[0].href}}">More Info</a> </td>
+		</tr>
+	</tbody>
+  </table>
+<br><br>
+<app-home-button></app-home-button>
+</ion-content>
